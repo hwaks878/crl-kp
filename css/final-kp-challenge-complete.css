@@ -1,0 +1,370 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+:root {
+    --clr-accent: #a59678;
+    --clr-text: #ffffff;
+    --ff-title: 'Oswald', sans-serif;
+    --ff-text: 'Montserrat', sans-serif;
+    --fs-footer-text: 16px;
+    --bk-footer: #3b4050;
+    --bk-nav: #1b1d25;
+    /* --bk-about: #6f737f; */
+    --bk-hero: #2e323f;
+    --bk-about: #9c9da150;
+}
+body {
+    margin: 0;
+    font-family: var(--ff-text);
+    font-size: var(--fs-footer-text);
+}
+img {
+    max-width: 100%;
+}
+h1 {
+    font-size: 90px;
+    font-weight: bolder;
+}
+h2 {
+    font-size: 36px;
+}
+h3 {
+    font-size: 21px;
+}
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* added for nav-toggle positioning */
+    position: relative;
+}
+.accent {
+    color: var(--clr-accent);
+}
+/* End Global */
+
+/* Nav section */
+header {
+    background: var(--bk-nav);
+    font-family: var(--ff-title);
+    font-size: 18px;
+    /* padding: 50px 0; */
+    padding: 25px 0;
+    text-align: center;
+}
+.nav {
+    width: 100%;
+}
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-item {
+    margin-top: 10px;
+}
+.nav-link {
+    color: var(--clr-text);
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.nav-link:hover,
+.nav-link:focus {
+    opacity: .7;
+}
+.nav-list-primary {
+    margin-bottom: 30px;
+}
+.nav-link-btn {
+    background: var(--clr-accent);
+    padding: 5px 30px;
+    border-radius: 100px;
+}
+/* Hamburger section */
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 50%;
+    background: #072A2D;
+    color: white;
+    transition: opacity 250ms ease;
+    
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
+}
+
+/* made changes here from video
+   to make it more accessible.
+   
+   Works the same :) */
+.nav {
+    visibility: hidden;
+    height: 0;
+    position: absolute;
+    font-size: 1rem; /* Added */
+}
+
+.nav--visible {
+    visibility: visible;
+    height: auto;
+    position: relative;
+} 
+
+/* End Hamburger  */
+.logo {
+    height: 30px;
+}
+
+/* Hero section */
+.hero {
+    background: var(--bk-hero);
+    font-family: var(--ff-title);
+    color: var(--clr-text);
+    padding: 75px 0;
+    /* padding: 2em 0; */
+    text-align: center;
+}
+
+.hero-btn-area {
+    font-family: var(--ff-text);
+    font-size: 24px;
+}
+.hero-btn-link {
+    background: var(--clr-accent);
+    color: var(--clr-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    display: inline-block;
+    padding: 10px 50px;
+    border-radius: 100px;
+    margin-top: 10px;
+}
+.hero-btn-link:hover,
+.hero-btn-link:focus {
+    opacity: .7;
+}
+
+/* First Content section */
+.content-about {
+    text-align: center;
+    padding: 55px 0;
+    /* background: #a5967836; */
+    background: var(--bk-about);
+    font-family: var(--ff-title);
+}
+.content-about p {
+    font-family: var(--ff-text);
+}
+
+/* Img section changes */
+.content-hard {
+    text-align: center;
+    padding: 150px 0;
+}
+.content-block .col-block {
+    background: #3b4050;
+    color: var(--clr-text);
+    margin: 20px 0;
+    padding: 65px;
+}
+.content-img h2,
+.content-block h2 {
+    font-family: var(--ff-title);
+}
+
+/* footer area changes */
+footer {
+    background: var(--bk-footer);
+    padding: 75px 0;
+    color: var(--clr-text);
+    /* font-size: var(--fs-footer-text); */
+    text-align: center;
+}
+.foot-heading {
+    font-size: 46px;
+    font-family: var(--ff-title);
+    font-weight: bold;
+    text-align: center;
+}
+.footer-company h3,
+.footer-sitemap h3 {
+    font-family: var(--ff-title);
+}
+.footer-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-nav-item {
+    margin-top: 20px;
+}
+.footer-nav-link {
+    text-decoration: none;
+    color: var(--clr-text);
+}
+.footer-nav-link:hover,
+.footer-nav-link:focus {
+    opacity: .7;
+}
+
+/* Medium Size */
+@media (min-width:700px) and (max-width:999px) {
+    .row-col-block {
+        /* col-block - all three divs */
+        display: flex; 
+        justify-content: space-between;
+    }
+    .content-block .col-block {
+        padding: 20px;
+    }
+    .col-block + .col-block {
+        margin-left: 10px;
+    }
+
+    .content-block h2 {
+        font-size: 24px;
+    }
+    .content-img {
+        text-align: left;
+    }
+    .row-col {
+        display: flex; /* footer-sitemap */
+        justify-content: space-between;
+    }
+}
+
+/* Desktop Size */
+@media (min-width:1000px) {
+    footer {
+        text-align: left;
+    }
+    .flex-row {
+        /* used for (logo & nav) & (hero-title & hero-btn-area) & (col-about) & (content-img & content-block) & (footer-company & footer-sitemap) */
+        display: flex; 
+        justify-content: space-between;
+        /* border: 2px solid yellow; */
+    }
+  
+    .col-about + .col-about {
+        margin-left: 75px;
+    }
+    /* Adjust the nav */
+    .nav {
+        /* work on the two UL */
+        display: flex;
+        height: auto; 
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .nav-list {
+        display: flex;
+        margin: 0;
+    }
+    .nav-item {
+        margin: 0 0 0 20px;
+    }
+    .nav-list-primary {
+        margin: 0 auto;
+    }
+
+
+    /* Adjust the knob */
+    h1 {
+        margin-bottom: 0;
+    }
+    .hero {
+        text-align: left;
+    }
+    .hero-btn-link {
+        text-align: center;
+    }
+    .hero-title {
+        width: 55%;
+    }
+    .hero-btn-area {
+        width: 41%;
+        /* ??? */
+        /* padding: 330px 75px 0 0; */
+        align-self: flex-end;
+        /* align-self: center; */
+    }
+
+    .content-img {
+        width: 62%;
+        text-align: left;
+     }
+    .content-block{
+        width: 30%;
+    }
+    .content-block .col-block {
+        margin: 10px;
+        padding: 20px;
+    }
+
+
+    .footer-company {
+        width: 38%;
+    }
+    .footer-sitemap {
+        width: 50%;
+    }
+    .row-col {
+        display: flex; /* row & col sections */
+        justify-content: space-between;
+        /* border: 2px solid green; */
+    }
+    .col + .col {
+        margin-left: 25px;
+    }
+    /* Hamburger goes away */
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav {
+        visibility: visible;
+        display: flex;
+        height: auto;
+        align-items: center; /* Added */
+        justify-content: flex-end; /* Added */
+        position: relative; /* Added * Becasue of the menu toggle was absolute in mobile*/
+
+    }
+}
